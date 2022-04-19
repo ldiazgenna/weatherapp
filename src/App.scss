@@ -1,55 +1,57 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap');
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    filter: alpha(opacity=0); }
+    filter: alpha(opacity=0);
+  }
   50% {
     opacity: 50;
-    filter: alpha(opacity=50); }
+    filter: alpha(opacity=50);
+  }
   100% {
     opacity: 1;
-    filter: alpha(opacity=1); } }
+    filter: alpha(opacity=1);
+  }
+}
+
+$boxShadow: 0 0.5px 0.5px rgba(229, 103, 23, 0.075) inset, 0 0 4px #007bff;
 
 html {
   font-size: 62.5%;
-  font-family: 'Merriweather Sans', sans-serif; }
+  font-family: 'Merriweather Sans', sans-serif;
+}
 
 html,
 body {
   width: 100%;
-  height: 100%;
+  height: 100% ;
   margin: 0;
   display: flex;
   flex-direction: column;
   background-image: url(../public/static/images/background.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 100%; }
+  background-size: 100% 100%;
+}
 
 #Container,
-#root {
-  height: 100%;
-  flex-direction: column; }
+#root{
+    height: 100%;
+    flex-direction: column;
+}
 
-h1 {
-  font-size: 4rem;
-  margin: 0%; }
-
-h2 {
-  font-size: 2rem;
-  margin: 0%; }
-
-h3 {
-  font-size: 1.33333rem;
-  margin: 0%; }
-
-h4 {
-  font-size: 1rem;
-  margin: 0%; }
+@for $i from 1 through 4 {
+  h#{$i} {
+    font-size: 4rem / $i;
+    margin: 0%;
+  }
+}
 
 #Buscador {
   width: 40%;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 #Buscar,
 #Unidad {
@@ -57,12 +59,13 @@ h4 {
   height: 3rem;
   border: 1px solid darkgray;
   border-radius: 3px;
-  box-sizing: border-box; }
-  #Buscar:focus,
-  #Unidad:focus {
+  box-sizing: border-box;
+  &:focus {
     border-color: #01567b;
-    box-shadow: 0 0.5px 0.5px rgba(229, 103, 23, 0.075) inset, 0 0 4px #007bff;
-    outline: 0 none; }
+    box-shadow: $boxShadow;
+    outline: 0 none;
+  }
+}
 
 #BotonPronostico {
   width: 40%;
@@ -73,16 +76,21 @@ h4 {
   background: linear-gradient(to right, #2c3e50, #2980b9);
   border: 1px solid #007bff;
   border-radius: 5px;
-  box-shadow: 0 0.5px 0.5px rgba(229, 103, 23, 0.075) inset, 0 0 4px #007bff; }
-  #BotonPronostico:hover {
-    background: #1b7892b9; }
+  box-shadow: $boxShadow;
+
+  &:hover {
+    background: #1b7892b9;
+  }
+}
 
 #Contenedor {
-  width: 60%; }
+  width: 60%;
+}
 
 #Contenedor-Datos {
   width: 70%;
-  padding: 2%; }
+  padding: 2%;
+}
 
 #Contenedor-Datos,
 #Caja1,
@@ -94,126 +102,162 @@ h4 {
   border: solid 3px lightgray;
   border-radius: 8px;
   box-shadow: 0 0.8px 0.8px rgba(203, 201, 200, 0.225) inset, 0 0 5px #ffffffb9;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 #Datos-Hoy {
-  border-top: solid 1px lightgray; }
+  border-top: solid 1px lightgray;
+}
 
 #Datos-Locales,
 #Datos-Clima {
-  width: 40%; }
+  width: 40%;
+}
 
 .Caja {
   height: 80%;
-  width: 18%; }
+  width: 18%;
+}
 
 .Info {
-  height: 60%; }
+  height: 60%;
+}
 
 #Registros {
-  height: 40%; }
+  height: 40%;
+}
 
 .fadeIn {
-  animation: fadeIn 5s; }
+  animation: fadeIn 5s;
+}
 
 .Flex {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 .jc-se {
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+}
 
 .w-100 {
-  width: 100%; }
+  width: 100%;
+}
 
 .h-10 {
-  height: 10%; }
+  height: 10%;
+}
 
 .h-30 {
-  height: 30%; }
+  height: 30%;
+}
 
 .h-50 {
-  height: 50%; }
+  height: 50%;
+}
 
 .h-70 {
-  height: 70%; }
+  height: 70%;
+}
 
 .h-90 {
-  height: 90%; }
+  height: 90%;
+}
 
 .p-1 {
-  padding: 1%; }
+  padding: 1%;
+}
 
 @media (max-width: 650px) {
   .Info {
     flex-direction: column;
-    height: 85%; }
+    height: 85%;
+  }
+
   #Buscador {
     flex-direction: column;
     width: 60%;
-    height: 30%; }
+    height: 30%;
+  }
+
   #Buscar {
-    width: 70%; }
+    width: 70%;
+  }
+
   #Unidad {
-    width: 70%; }
+    width: 70%;
+  }
+
   #BotonPronostico {
-    width: 70%; }
+    width: 70%;
+  }
+
   #Contenedor {
     width: 90%;
-    height: 70%; }
+    height: 70%;
+  }
+
   #Contenedor-Datos {
     width: 100%;
-    height: 90%; }
+    height: 90%;
+  }
+
   #Registro {
-    height: 15%; }
+    height: 15%;
+  }
+
   .Caja {
-    width: 30%; } }
+    width: 30%;
+  }
+}
 
 @media (max-height: 730px) {
-  h1 {
-    font-size: 2.5rem;
-    margin: 0%; }
-  h2 {
-    font-size: 1.25rem;
-    margin: 0%; }
-  h3 {
-    font-size: 0.83333rem;
-    margin: 0%; }
-  h4 {
-    font-size: 0.625rem;
-    margin: 0%; }
+  @for $i from 1 through 4 {
+    h#{$i} {
+      font-size: 2.5rem / $i;
+      margin: 0%;
+    }
+  }
+
   #Buscador {
-    height: 50%; } }
+    height: 50%;
+  }
+}
 
 @media (max-height: 850px) and (max-width: 710px) {
   #Buscador {
     flex-direction: column;
-    height: 30%; }
+    height: 30%;
+  }
+
   #Contenedor {
-    height: 70%; }
-  h1 {
-    font-size: 2.5rem;
-    margin: 0%; }
-  h2 {
-    font-size: 1.25rem;
-    margin: 0%; }
-  h3 {
-    font-size: 0.83333rem;
-    margin: 0%; }
-  h4 {
-    font-size: 0.625rem;
-    margin: 0%; } }
+    height: 70%;
+  }
+
+  @for $i from 1 through 4 {
+    h#{$i} {
+      font-size: 2.5rem / $i;
+      margin: 0%;
+    }
+  }
+}
 
 @media (max-width: 670px) and (max-height: 376px) {
   #Buscador {
-    height: 60%; } }
+    height: 60%;
+  }
+}
 
 @media (max-width: 1000px) and (min-height: 1000px) {
   #Contenedor {
     width: 70%;
-    height: 70%; }
+    height: 70%;
+  }
+
   .Caja {
     height: 75%;
-    width: 30%; } }
+    width: 30%;
+  }
+}
