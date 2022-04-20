@@ -8,3 +8,5 @@
 El proyecto usa:
 
 React para la web, usando un template que incluye service-worker
+
+Tambien puede acceder a la web a traves de la url https://weatherleoneldiaz.000webhostapp.com/
